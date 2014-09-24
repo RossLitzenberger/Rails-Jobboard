@@ -1,12 +1,11 @@
-%ul
+= link_to 'New Job', new_job_path, :class => "new_job_link"
+
+%ul#contant
   - @jobs.each do |job|
-    %li
-    = link_to(job) do
+    %li 
+    = link_to(job, :class => "job_link") do
       %strong.job_title
         = job.title
       %span.description
         = job.description
-      = link_to 'Edit', edit_job_path(job)
-      = link_to 'Destroy', job, :method => :delete, :data => { :confirm => 'Dont do it! It will hurt my feeling. :(' }
-
-= link_to 'New Job', new_job_path
+      = link_to 'Edit', edit_job_path(job), :class => "Edit_link"

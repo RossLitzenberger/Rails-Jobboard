@@ -1,4 +1,4 @@
-!!! 
+!!!
 %html
 %head
   %title Easyjobs
@@ -6,4 +6,8 @@
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  = yield
+  #wrapper
+    #header
+    %h1#logo
+      Easy Jobs!
+    = yield

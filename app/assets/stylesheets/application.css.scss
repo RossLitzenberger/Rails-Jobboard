@@ -1,0 +1,38 @@
+@import "bourbon";
+@import "neat";
+@import "jobs";
+ 
+#wrapper{
+  @include outer-container;
+ 
+  .job_title{
+    font-size: 1.4em;
+    @include span-columns(4);
+  }
+  .description{
+    @include span-columns(8);
+    @include omega();
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+} 
+.new_job_link{
+  float: right;
+  font-weight: bold;
+  font-size: 2em;
+}
+ul{
+  padding: 0px;
+}
+li{ 
+  margin: 20px;
+  padding: 20px ;
+  list-style-type: none;
+}
+
+.Edit_link{
+  @include span-columns(4);
+  width: 73%
+}
