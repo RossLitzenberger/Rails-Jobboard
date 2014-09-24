@@ -1,38 +1,73 @@
+@import "jobs";
 @import "bourbon";
 @import "neat";
-@import "jobs";
- 
+ $bg-color-li: #FFC;
+
 #wrapper{
   @include outer-container;
  
   .job_title{
     font-size: 1.4em;
+    background: $bg-color-li;
     @include span-columns(4);
+    margin-right: 0px;
   }
   .description{
     @include span-columns(8);
     @include omega();
     display: block;
+    padding-bottom: 8px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    background: $bg-color-li;
   }
 } 
+ul{
+  padding: 0px;
+}
+li{
+  margin: 20px;
+  padding: 20px ;
+  list-style-type: none;
+}
 .new_job_link{
   float: right;
   font-weight: bold;
   font-size: 2em;
 }
-ul{
-  padding: 0px;
-}
-li{ 
-  margin: 20px;
-  padding: 20px ;
-  list-style-type: none;
+.job_link{
+  background: #FFC;
 }
 
 .Edit_link{
   @include span-columns(4);
   width: 73%
 }
+// views/job/show.html.haml//
+.job_show{
+  .show_job_title{
+      font-size: 1.4em;
+      font-weight: bold;
+  }
+  .company_name{
+    font-size: 1.4em;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  p.job_description{
+    margin-bottom: 20px;
+  }
+  .details_link { 
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
