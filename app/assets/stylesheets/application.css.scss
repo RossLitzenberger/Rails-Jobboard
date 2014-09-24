@@ -65,7 +65,19 @@ li{
     margin-bottom: 20px;
   }
 }
-
+// views/form.html.haml//
+h2{
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 10px 0;
+}
+.field{
+  background: #FFC;
+  label {
+      margin-top: 20px;
+      display: block;
+    }
+}
 
 
 
