@@ -10,4 +10,17 @@
     #header
     %h1#logo
       Easy Jobs!
+      %p.notice
+        = notice
+      %p.alert
+        = alert
+      #user_bar
+        - if current_user
+          Logged In as #{current_user.email}
+          |
+          = link_to 'Sign out', logout_path
+        - else
+          = link_to "Register", register_path
+          |
+          = link_to "Sign In", login_path
     = yield
