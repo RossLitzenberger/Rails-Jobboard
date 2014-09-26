@@ -2,10 +2,37 @@
 @import "bourbon";
 @import "neat";
  $bg-color-li: #FFC;
+body{
+background: url('bg.png') top center repeat-x, url('folder_noise.png') top center;
+font-family: 'Rokkitt', serif;
+}
+h1{
+  width: 390px;
+  height: 79px;
+  background: url('easy_jobs.png') top center no-repeat;
+  text-indent: -20000px;
+  margin-top: 2px;
+  float: left;
+  }
 
+#user_bar{
+
+  float: right;
+  margin-top: 29px;
+}
+.content{
+  float: left;
+  background: url('noise.png') top center, -webkit-gradient(linear, left bottom, left top, color-stop(0, #F0F0F0), color-stop(1, #FFF));
+  margin: 65px 8.4210526315789%; /* 80/ 95*/
+  padding: 30px;
+  box-shadow: 0px 1px 20px rgba(0,0,0,0.8);
+  height: 500px;
+  width: 83.1578947368421% /*790 /950*/
+
+}
 #wrapper{
   @include outer-container;
- 
+
   .job_title{
     font-size: 1.4em;
     background: $bg-color-li;
@@ -22,7 +49,7 @@
     text-overflow: ellipsis;
     background: $bg-color-li;
   }
-} 
+}
 ul{
   padding: 0px;
 }
@@ -46,9 +73,21 @@ li{
 }
 // views/job/show.html.haml//
 .job_show{
+  .job_header {
+    float: left;
+  }
   .show_job_title{
       font-size: 1.4em;
       font-weight: bold;
+  }
+  .job_date{
+    color: #d70000;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    float: right;
+    transform: rotate(-10deg);
+    margin-right: 50px;
   }
   .company_name{
     font-size: 1.4em;
@@ -57,12 +96,19 @@ li{
   }
   p.job_description{
     margin-bottom: 20px;
+    float: left;
   }
-  .details_link { 
+  .job_links{
+    float: left;
+    clear: both;
+
+  }
+  .details_link {
     display: block;
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 20px;
+    float: left;
   }
 }
 // views/form.html.haml//
@@ -78,8 +124,3 @@ h2{
       display: block;
     }
 }
-
-
-
-
-
