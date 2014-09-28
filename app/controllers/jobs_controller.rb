@@ -1,6 +1,10 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
+
+  before_filter :set_job, only: [:show, :edit, :update, :destroy]
+
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+
 
   # GET /jobs
   # GET /jobs.json
@@ -26,6 +30,7 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+
 
     respond_to do |format|
       if @job.save
