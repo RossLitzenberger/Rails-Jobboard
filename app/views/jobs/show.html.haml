@@ -6,12 +6,11 @@
 			= @job.title
 		.company_name
 			= @job.company_name
+		-# here the question i want to display the user that goes with the job that get posted.
 		.user
 			-if user_signed_in?
 				Posted by
-				= @job.user.first_name
-				= @job.user.last_name
-				= @job.user.email
+				= @job.user.profile_name
 	.job_date
 		POSTED ON
 		%br
@@ -25,4 +24,3 @@
 		= link_to 'Edit', edit_job_path(@job)
 		|
 		= link_to 'Back', jobs_path
--# trying to get that user to display the first_name and last_name but ends up nil 
