@@ -11,12 +11,14 @@
     #header
     %h1#logo
       Easy Jobs!
+    #user_bar
+      -if user_signed_in?
+        = link_to 'Update',edit_user_registration_path
+        = link_to 'Sign out',  logout_path
+      -else
+        = link_to "Register", register_path
+        |
+        = link_to "Sign In", login_path
     %p.notice= notice
     %p.alert= alert
-    #user_bar
-
-      = link_to 'Sign out',  logout_path
-      = link_to "Register", register_path
-      |
-      = link_to "Sign In", login_path
     .content= yield

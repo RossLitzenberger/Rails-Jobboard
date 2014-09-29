@@ -6,11 +6,10 @@
 			= @job.title
 		.company_name
 			= @job.company_name
-		-if @job.user
-			.user
+		.user
+			-if user_signed_in?
 				Posted by
-				= link_to @job.user.name, @job.user
-
+				= @job.user
 	.job_date
 		POSTED ON
 		%br

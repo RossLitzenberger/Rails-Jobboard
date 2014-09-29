@@ -7,6 +7,7 @@ gem 'haml-rails'
 gem 'bourbon'
 gem 'neat'
 gem 'devise'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

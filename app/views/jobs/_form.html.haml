@@ -5,7 +5,8 @@
       %ul
         - @job.errors.full_messages.each do |msg|
           %li= msg
-
+  .field
+    = f.label :user_id
   .field
     = f.label :title, "Job Title"
     = f.text_field :title
