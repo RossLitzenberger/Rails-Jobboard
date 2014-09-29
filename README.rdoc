@@ -1,8 +1,6 @@
-I just pulled down my application again
-
-1 rake db:create
-2 rake db:migrate
-3 When to app/views/jobs/show.html.haml
+1. rake db:create
+2. rake db:migrate
+3 .When to app/views/jobs/show.html.haml . add @job.user.first_name @job.user.last_name
 
 -# here the question i want to display the user that goes with the job that get posted.
 		.user
@@ -13,10 +11,15 @@ I just pulled down my application again
         = @job.user.email
 
 
-4 run rails s
-5 open the browers
-6 click register (build a user filled out everything)
+4. run rails s
+5. open the browers
+6. click register (build a user filled out everything)
+
 Stop!  open rails console and type User.first I saw that first_name last_name profile_name is "nil "but everything else was entered in
 
-7 Create a Job post
-8 I submit it
+7. Create a Job post
+8. I submit it
+9. the Posted by is not showing the first_name last_name profile_name
+
+
+why are those field nil . when i fill all that out in register?
