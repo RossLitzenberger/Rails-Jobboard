@@ -9,7 +9,9 @@
 		.user
 			-if user_signed_in?
 				Posted by
-				= @job.user
+				= @job.user.first_name
+				= @job.user.last_name
+				= @job.user.email
 	.job_date
 		POSTED ON
 		%br
@@ -23,3 +25,4 @@
 		= link_to 'Edit', edit_job_path(@job)
 		|
 		= link_to 'Back', jobs_path
+-# trying to get that user to display the first_name and last_name but ends up nil 
