@@ -1,11 +1,12 @@
 = link_to 'New Job', new_job_path, :class => "new_job_link"
 
-%ul#contant
+%ul#jobs
   - @jobs.each do |job|
-    %li 
-    = link_to(job, :class => "job_link") do
-      %strong.job_title
-        = job.title
-      %span.description
-        = job.description
-      = link_to 'Edit', edit_job_path(job), :class => "Edit_link"
+    %li
+      = link_to(job, :class => "job_link") do
+        %strong.job_title
+          = job.title
+        %span.description
+          = job.description
+    - if job.user == current_user      
+      = link_to 'Edit', edit_job_path(job)
