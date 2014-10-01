@@ -9,4 +9,4 @@
         %span.description
           = job.description
     - if job.user == current_user      
-      = link_to 'Edit', edit_job_path(job)
+      = link_to 'Edit', edit_job_path(job), :class => "Edit_link"

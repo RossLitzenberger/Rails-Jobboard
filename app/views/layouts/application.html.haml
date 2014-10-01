@@ -9,11 +9,13 @@
 %body
   #wrapper
     #header
-    %h1#logo
-      Easy Jobs!
+    = link_to root_url do
+      %h1#logo
+        Easy Jobs!
     #user_bar
       -if user_signed_in?
-        = link_to 'Update',edit_user_registration_path
+        Logged in as:
+        = link_to  current_user.full_name ,edit_user_registration_path
         = link_to 'Sign out',  logout_path
       -else
         = link_to "Register", register_path

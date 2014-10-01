@@ -22,6 +22,7 @@ h1{
 
 #user_bar{
 
+  margin-right: 77px;
   float: right;
   margin-top: 29px;
 }
@@ -31,10 +32,8 @@ h1{
   margin: 65px 8.4210526315789%; /* 80/ 95*/
   padding: 30px;
   box-shadow: 0px 1px 20px rgba(0,0,0,0.8);
-  height: 500px;
   width: 83.1578947368421% /*790 /950*/
-
-}
+ }
 #wrapper{
   @include outer-container;
 
@@ -51,8 +50,15 @@ h1{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
   }
+}
+.notice, .alert{
+  background: #33FF33;
+  color:white;
+}
+.alert{
+  background: #d70000;
+  color: white;
 }
 //***************
 // Job Index view
@@ -103,20 +109,14 @@ li{
 //***************
 // Job Show view
 //***************
-ul#jobs{
-    height:390px;
-  overflow-y:auto;
-   -webkit-box-shadow: 0px 1px 6px 3px rgba(0,0,0,0.4);
- -mozbox-shadow: 0px 1px 6px 3px rgba(0,0,0,0.4);
- box-shadow: 0px 1px 6px 3px rgba(0,0,0,0.4);
-}
+
 ul#jobs li:nth-child(odd) {
-  background: #FFF;
+  background: lightblue;
   margin: inherit;
 
 }
 ul#jobs li:nth-child(even) {
-  background: #DDF5FF;
+  background: wheat;
   margin: inherit;
 
 }
@@ -164,15 +164,103 @@ ul#jobs li:nth-child(even) {
 //***************
 // Forms view
 //***************
+
 h2{
   font-weight: bold;
   font-size: 1.4em;
   margin: 10px 0;
 }
 .field{
-  background: #FFC;
-  label {
+ 
+   label {
       margin-top: 20px;
       display: block;
     }
+}
+
+//***************
+// media query
+//***************
+@media only screen and (max-width: 830px) {
+  body{
+    
+  }
+  h1#logo{
+    width: 320px;
+    background-size: contain;
+    margin-top: 15px;
+    
+  }
+  .content{
+    margin-top: 20px;
+    padding: 30px;
+    width: 83.1578947368421% /*790 /950*/
+ }
+#wrapper {
+    @include outer-container;
+    $mobile: new-breakpoint(max-width 830px 4);
+    .job_title{
+    @include span-columns(4);
+    width: 90%;
+    }
+
+    .description{
+      @include media($mobile) {
+      @include span-columns(3);
+      width: 100%;
+      }
+    }
+  }
+}
+
+li{
+  float: left;
+  display: block;
+  margin-right: 7.42297%;
+  width: 100%;
+  background: green;
+  }
+  .job_show{
+    .job_date{
+      font-size: 1.2em;
+      margin-right: 50px;
+      margin-top: 21px;
+      -webkit-transform: rotate(-3deg);
+    }
+    .notice, .alert{
+      display: none;
+    }
+  }
+
+@media only screen and (max-width: 701px) {
+  h1#logo{
+    margin-top: 23px;
+  }
+ .notice, .alert{
+    display: none;
+  }
+.job_show{
+    .job_date{
+      font-size: 1.2em;
+      float: left;
+      clear: both;
+      
+      -webkit-transform: rotate(-3deg);
+      margin: 10px 26px;
+    }
+  }
+}
+@media only and (max-width: 660px) {
+ .notice, .alert{
+    display: none;
+  }
+ .job_show{
+    .job_date{
+      font-size: 1.2em;
+   
+    }
+  }   
+  #user_bar{
+  margin-top: 0px; 
+  }
 }
